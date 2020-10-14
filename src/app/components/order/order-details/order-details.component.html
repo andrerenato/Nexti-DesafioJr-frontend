@@ -1,11 +1,23 @@
 <mat-card>
     <mat-card-title>{{ title }}</mat-card-title>
     <form>
+
         <mat-form-field>
-            <input matInput placeholder="Cliente" required name="client" [(ngModel)]="this.order.client">
+            <mat-label>Cliente</mat-label>
+            <mat-select name="selectedClient" [compareWith]="compareClient" [(ngModel)]="selectedClient" required>
+                <mat-option *ngFor="let client of clients" [value]="client" >
+                    {{client.name}}
+                </mat-option>
+            </mat-select>
         </mat-form-field>
+
         <mat-form-field>
-            <input matInput placeholder="Produtos" required name="products" [(ngModel)]="this.order.products">
+            <mat-label>Produtos</mat-label>
+            <mat-select name="selectedProducts" [compareWith]="compareProducts" [(ngModel)]="selectedProducts" multiple required>
+                <mat-option *ngFor="let product of products"  [value]="product">
+                    {{product.name}}
+                </mat-option>
+            </mat-select>
         </mat-form-field>
         
         <div>

@@ -24,8 +24,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
+import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ClientDetailsComponent } from './components/client/client-details/client-details.component';
 import { OrderDetailsComponent } from './components/order/order-details/order-details.component';
 
@@ -61,6 +62,7 @@ import { OrderDetailsComponent } from './components/order/order-details/order-de
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
