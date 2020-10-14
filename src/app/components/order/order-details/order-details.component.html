@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-title>{{ title }}</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Cliente" required name="client" [(ngModel)]="this.order.client">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Produtos" required name="products" [(ngModel)]="this.order.products">
+        </mat-form-field>
+        
+        <div>
+            <button mat-raised-button type="submit" (click)="createOrUpdate()" color="primary">
+                Salvar
+            </button>
+            <button mat-raised-button (click)="cancel()" color="warn">
+                Cancelar
+            </button>
+        </div>
+    </form>
+</mat-card>

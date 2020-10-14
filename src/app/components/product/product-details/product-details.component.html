@@ -1,0 +1,29 @@
+<mat-card>
+    <mat-card-title>{{ title }}</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" required name="name" [(ngModel)]="this.product.name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="SKU" required name="sku" [(ngModel)]="this.product.sku">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Descricao" name="description" [(ngModel)]="this.product.description">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Valor" required name="value" [(ngModel)]="this.product.value">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Quantidade" required name="quantity" [(ngModel)]="this.product.quantity">
+        </mat-form-field>
+        <div>
+            <button mat-raised-button type="submit" (click)="createOrUpdate()" color="primary">
+                Salvar
+            </button>
+            <button mat-raised-button (click)="cancel()" color="warn">
+                Cancelar
+            </button>
+        </div>
+    </form>
+</mat-card>
+

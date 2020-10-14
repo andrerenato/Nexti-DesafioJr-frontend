@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-title>{{ title }}</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" required name="name" [(ngModel)]="this.client.name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="CPF" required name="cpf" [(ngModel)]="this.client.cpf">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Data de Nascimento" name="birthdate" [(ngModel)]="this.client.birthdate">
+        </mat-form-field>
+        <div>
+            <button mat-raised-button type="submit" (click)="createOrUpdate()" color="primary">
+                Salvar
+            </button>
+            <button mat-raised-button (click)="cancel()" color="warn">
+                Cancelar
+            </button>
+        </div>
+    </form>
+</mat-card>

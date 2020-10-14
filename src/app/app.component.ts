@@ -1,4 +1,7 @@
+import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'nexti-desafiojr-frontend';
+
 }
