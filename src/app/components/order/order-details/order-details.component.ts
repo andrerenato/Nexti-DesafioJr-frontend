@@ -80,7 +80,6 @@ export class OrderDetailsComponent implements OnInit {
   create() {
     this.order.client = this.selectedClient;
     this.order.products = this.selectedProducts;
-    console.log(this.order);
     this.orderService.create(this.order).subscribe(response => {
       this.snackBar.open("Salvo com sucesso!", 'x', { duration:3000, horizontalPosition:'right', verticalPosition:'top' });
       this.router.navigate(['/orders']);
