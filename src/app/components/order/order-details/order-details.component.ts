@@ -33,7 +33,7 @@ export class OrderDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.order = new Order();
-    this.selectedClient = new Client();
+    this.selectedClient = null;
     this.selectedProducts = [];
     this.getById();
     this.getAllClients();
@@ -63,7 +63,7 @@ export class OrderDetailsComponent implements OnInit {
         this.selectedProducts = result.products;
       },
       error => {
-        this.snackBar.open(error.message, 'x', { duration:3000, horizontalPosition:'right', verticalPosition:'top' });
+        this.snackBar.open("Erro, verificar campos enviados.", 'x', { duration:3000, horizontalPosition:'right', verticalPosition:'top' });
       });
     }
     
@@ -86,12 +86,11 @@ export class OrderDetailsComponent implements OnInit {
       this.router.navigate(['/orders']);
     },
     error => {
-      this.snackBar.open(error.message, 'x', { duration:3000, horizontalPosition:'right', verticalPosition:'top' });
+      this.snackBar.open("Erro, verificar campos enviados.", 'x', { duration:3000, horizontalPosition:'right', verticalPosition:'top' });
     })
   }
 
   update() {
-    console.log(this.order);
     this.order.client = this.selectedClient;
     this.order.products = this.selectedProducts;
     this.orderService.update(this.order.id, this.order).subscribe(result => {
@@ -99,7 +98,7 @@ export class OrderDetailsComponent implements OnInit {
       this.router.navigate(['/orders']);
     },
     error => {
-      this.snackBar.open(error.message, 'x', { duration:3000, horizontalPosition:'right', verticalPosition:'top' });
+      this.snackBar.open("Erro, verificar campos enviados.", 'x', { duration:3000, horizontalPosition:'right', verticalPosition:'top' });
     });
   }
 

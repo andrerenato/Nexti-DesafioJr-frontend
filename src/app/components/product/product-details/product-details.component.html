@@ -1,6 +1,6 @@
 <mat-card>
     <mat-card-title>{{ title }}</mat-card-title>
-    <form>
+    <form (ngSubmit)="createOrUpdate()">
         <mat-form-field>
             <input matInput placeholder="Nome" required name="name" [(ngModel)]="this.product.name">
         </mat-form-field>
@@ -11,13 +11,13 @@
             <input matInput placeholder="Descricao" name="description" [(ngModel)]="this.product.description">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Valor" required name="value" [(ngModel)]="this.product.value">
+            <input matInput placeholder="Valor" mask="000000000" required name="value" [(ngModel)]="this.product.value">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Quantidade" required name="quantity" [(ngModel)]="this.product.quantity">
+            <input matInput placeholder="Quantidade" mask="0000000" required name="quantity" [(ngModel)]="this.product.quantity">
         </mat-form-field>
         <div>
-            <button mat-raised-button type="submit" (click)="createOrUpdate()" color="primary">
+            <button mat-raised-button type="submit" color="primary">
                 Salvar
             </button>
             <button mat-raised-button (click)="cancel()" color="warn">

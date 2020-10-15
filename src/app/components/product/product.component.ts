@@ -46,7 +46,7 @@ export class ProductComponent implements OnInit {
       this.snackBar.open("Produto removido com sucesso!", 'x', { duration:3000, horizontalPosition:'right', verticalPosition:'top' });
     },
     error => {
-      this.snackBar.open(error.message, 'x', { duration:3000, horizontalPosition:'right', verticalPosition:'top' });
+      this.snackBar.open("Não foi possivel remover produto.", 'x', { duration:3000, horizontalPosition:'right', verticalPosition:'top' });
     });
     this.confirm = false;
     this.getAll();

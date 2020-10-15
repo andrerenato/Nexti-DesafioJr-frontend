@@ -1,17 +1,19 @@
 <mat-card>
     <mat-card-title>{{ title }}</mat-card-title>
-    <form>
+    <form (ngSubmit)="createOrUpdate()"> 
         <mat-form-field>
             <input matInput placeholder="Nome" required name="name" [(ngModel)]="this.client.name">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="CPF" required name="cpf" [(ngModel)]="this.client.cpf">
+            <input matInput placeholder="CPF" mask="000.000.000-00" required name="cpf" [(ngModel)]="this.client.cpf">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Data de Nascimento" name="birthdate" [(ngModel)]="this.client.birthdate">
+        <mat-form-field *ngIf="!disable">
+            <mat-label>Data de Aniversário - mm/DD/yyyy</mat-label>
+                <input matInput [matDatepicker]="picker" (click)="picker.open()" name="birthdate" [(ngModel)]="this.client.birthdate">
+            <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
         <div>
-            <button mat-raised-button type="submit" (click)="createOrUpdate()" color="primary">
+            <button mat-raised-button type="submit" color="primary">
                 Salvar
             </button>
             <button mat-raised-button (click)="cancel()" color="warn">

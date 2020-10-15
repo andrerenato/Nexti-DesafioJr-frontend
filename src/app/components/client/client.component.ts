@@ -44,7 +44,7 @@ export class ClientComponent implements OnInit {
       this.snackBar.open("Cliente removido com sucesso!", 'x', { duration:3000, horizontalPosition:'right', verticalPosition:'top' });
     },
     error => {
-      this.snackBar.open(error.message, 'x', { duration:3000, horizontalPosition:'right', verticalPosition:'top' });
+      this.snackBar.open("Não foi possivel remover cliente.", 'x', { duration:3000, horizontalPosition:'right', verticalPosition:'top' });
     });
     this.confirm = false;
     this.getAll();

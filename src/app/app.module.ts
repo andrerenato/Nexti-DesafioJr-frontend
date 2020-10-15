@@ -29,6 +29,9 @@ import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ClientDetailsComponent } from './components/client/client-details/client-details.component';
 import { OrderDetailsComponent } from './components/order/order-details/order-details.component';
+import { NgxMaskModule, IConfig} from 'ngx-mask';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -63,8 +66,13 @@ import { OrderDetailsComponent } from './components/order/order-details/order-de
     MatInputModule,
     MatDialogModule,
     MatSelectModule,
+    NgxMaskModule.forRoot(),
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
